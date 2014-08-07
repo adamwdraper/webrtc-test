@@ -17,6 +17,7 @@ requirejs.config({
         'underscore': 'libraries/underscore/underscore',
         'backbone': 'libraries/backbone/backbone',
         'backboneStickit': 'libraries/backbone/extensions/stickit',
+        'adapter': 'libraries/polyfills/adapter',
         'domReady': 'libraries/require/plugins/domReady',
         'async': 'libraries/require/plugins/async',
         'json': 'libraries/require/plugins/json',
@@ -31,7 +32,8 @@ requirejs.config({
     deps: [
         'modernizr',
         'jqueryFunctions',
-        'backboneStickit'
+        'backboneStickit',
+        'adapter'
     ],
     callback: function () {
         require([

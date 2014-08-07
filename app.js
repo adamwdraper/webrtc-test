@@ -18,6 +18,12 @@ app.get('/', function (req, res) {
     });
 });
 
+app.get('/talk', function (req, res) {
+    res.render('talk', {
+        environment: environment
+    });
+});
+
 app.use(function (req, res) {
     res.status(404);
     res.render('404', {
