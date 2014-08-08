@@ -16,11 +16,8 @@ define([
             },
             connection: null,
             stream: null,
-            initialize: function () {
-                _.bindAll(this, 'setStream', 'connected');
-            },
+            initialize: function () {},
             render: function () {
-                getUserMedia(this.constraints, this.setStream, this.streamError);
                 
                 return this;
             },
