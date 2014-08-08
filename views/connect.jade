@@ -3,5 +3,9 @@ block vars
     - var router = "connect"
 
 block content
-    video(data-appular-component="video", autoplay, muted)
-    video(data-appular-component="video", autoplay, muted)
+    div(data-appular-component="connect")
+        video#local(autoplay, muted)
+        video#remote(autoplay, muted)
+        .controls
+            button#start Start
+            button#call Call
