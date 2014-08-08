@@ -26,7 +26,6 @@ define([
                 navigator.getUserMedia(this.constraints, this.displayVideo, this.displayError);
             },
             displayVideo: function (localMediaStream) {
-                window.stream = localMediaStream; // stream available to console
                 this.el.src = window.URL.createObjectURL(localMediaStream);
                 this.el.play();
             },
