@@ -17,7 +17,7 @@ define([
             connection: null,
             stream: null,
             initialize: function () {
-                _.bindAll(this, 'setStream', 'connected');
+                _.bindAll(this, 'setStream', 'connect', 'connected');
             },
             render: function () {
                 getUserMedia(this.constraints, this.setStream, this.streamError);
@@ -32,8 +32,8 @@ define([
                 console.log('navigator.getUserMedia error: ', error);
             },
             connect: function () {
-                this.connection = new RTCPeerConnection();
-                this.listenTo(this.connection, 'icecandidate', this.connected);
+                this.connection = new RTCPeerConnection(null);
+                this.connection.onicecandidate = this.connected;
             },
             connected: function (event) {
                 this.trigger('connected', event);

@@ -18,12 +18,12 @@ define([
                 this.views.local = new Local({
                     el: '#local'
                 }).render();
+                this.listenTo(this.views.local, 'connected', this.localConnected);
 
                 this.views.remote = new Remote({
                     el: '#remote'
                 }).render();
-
-                this.listenTo(this.views.local, 'connected', connected);
+                this.listenTo(this.views.remote, 'connected', this.remoteConnected);
 
                 return this;
             },
@@ -31,9 +31,14 @@ define([
                 this.views.local.connect();
                 this.views.remote.connect();
             },
-            connected: function (event) {
+            localConnected: function (event) {
                 if (event.candidate) {
                     this.views.remote.connection.addIceCandidate(new RTCIceCandidate(event.candidate));
+                }
+            },
+            remoteConnected: function (event) {
+                if (event.candidate) {
+                    this.views.local.connection.addIceCandidate(new RTCIceCandidate(event.candidate));
                 }
             }
         });
