@@ -9,9 +9,7 @@ define([
     './views/local/view'
 ], function ($, _, Backbone, Local) {
     var View = Backbone.View.extend({
-            events: {
-                'click #start': 'start'
-            },
+            events: {},
             initialize: function () {},
             render: function () {
                 this.views.local = new Local({
@@ -19,9 +17,6 @@ define([
                 }).render();
 
                 return this;
-            },
-            start: function () {
-                this.views.local.start();
             }
         });
 

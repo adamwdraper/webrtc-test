@@ -22,12 +22,9 @@ define([
                 _.bindAll(this, 'setStream');
             },
             render: function () {
-
+                getUserMedia(this.constraints, this.setStream, this.streamError);
                 
                 return this;
-            },
-            start: function () {
-                getUserMedia(this.constraints, this.setStream, this.streamError);
             },
             setStream: function (stream) {
                 this.el.src = URL.createObjectURL(stream);
