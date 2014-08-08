@@ -18,8 +18,14 @@ app.get('/', function (req, res) {
     });
 });
 
-app.get('/talk', function (req, res) {
-    res.render('talk', {
+app.get('/connect', function (req, res) {
+    res.render('connect', {
+        environment: environment
+    });
+});
+
+app.get('/camera', function (req, res) {
+    res.render('camera', {
         environment: environment
     });
 });

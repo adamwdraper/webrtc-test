@@ -1,5 +1,5 @@
 /**
- * @appular talk
+ * @appular connect
  */
 define([
     'jquery',
@@ -9,7 +9,7 @@ define([
     var Router = Backbone.Router.extend({
             history: {
                 pushState: true,
-                root: '/talk'
+                root: '/connect'
             },
             params: {}
         });

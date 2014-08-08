@@ -1,5 +1,5 @@
 /**
- * @appular video
+ * @appular camera
  */
 
 define([
